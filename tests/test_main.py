@@ -29,4 +29,12 @@ def test_services_endpoint() -> None:
     assert response.status_code == 200
     assert len(response_body) == 3
     assert response_body[0]["name"] == "customer-api"
-    assert response_body[0]["status"] == "operational"
+    assert response_body[0]["status"] == "operational" 
+
+def test_version_endpoint() -> None:
+    response = client.get("/version")
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "version": "0.1.1"
+    }

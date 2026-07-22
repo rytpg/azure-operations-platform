@@ -77,6 +77,24 @@ http://127.0.0.1:8000/docs
 
 
 
+
+
+#### Available endpoints
+
+
+
+/
+
+/health
+
+/services
+
+/version
+
+/docs
+
+
+
 #### Run Tests
 
 
@@ -148,10 +166,4 @@ Stop and remove container
 docker stop azure-operations-platfrom
 
 docker rm azure-operations-platform
-
-
-
-
-
-
 

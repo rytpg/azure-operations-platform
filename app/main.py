@@ -4,7 +4,7 @@ from fastapi import FastAPI
 app = FastAPI(
     title = "Azure Operations Platform",
     description = "A small service status API for demonstrating cloud operations",
-    version = "0.1.0"
+    version = "0.1.1"
 )
 
 @app.get("/")
@@ -37,3 +37,9 @@ def list_services() -> list[dict[str,str]]:
             "status": "operational"
         }
     ]
+
+@app.get("/version")
+def get_version() -> dict[str,str]:
+    return {
+        "version": "0.1.1"
+    }
