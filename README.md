@@ -119,7 +119,7 @@ Build Docker image
 
 
 
-docker build -t azure-operations-platform:0.1.2 .
+docker build -t azure-operations-platform:0.1.3 .
 
 
 
@@ -127,7 +127,7 @@ Run application container
 
 
 
-docker run --name azure-operations-platform -e APP\_ENV=container -p 8000:8000 azure-operations-platform:0.1.2
+docker run --name azure-operations-platform -e APP\_ENV=container -p 8000:8000 azure-operations-platform:0.1.3
 
 
 

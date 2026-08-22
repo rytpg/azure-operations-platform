@@ -1,6 +1,12 @@
 import os
+import logging
 from datetime import UTC, datetime
 from fastapi import FastAPI
+
+logging.basicConfig(level=logging.INFO)
+
+logger = logging.getLogger(__name__)
+
 
 APP_VERSION = "0.1.2"
 APP_ENVIRONMENT = os.getenv("APP_ENV", "local")
@@ -20,6 +26,7 @@ def read_root() -> dict[str,str]:
 
 @app.get("/health")
 def health_check() -> dict[str,str]:
+    logger.info("Health check requested")
     return{
         "status": "healthy",
         "timestamp": datetime.now(UTC).isoformat()
