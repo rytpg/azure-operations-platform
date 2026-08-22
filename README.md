@@ -119,7 +119,7 @@ Build Docker image
 
 
 
-docker build -t azure-operations-platform:0.1.0 .
+docker build -t azure-operations-platform:0.1.2 .
 
 
 
@@ -127,7 +127,7 @@ Run application container
 
 
 
-docker run --name azure-operations-platform -p 8000:8000 azure-operations-platform:0.1.0
+docker run --name azure-operations-platform -e APP\_ENV=container -p 8000:8000 azure-operations-platform:0.1.2
 
 
 
@@ -148,6 +148,8 @@ curl http://localhost:8000/
 curl http://localhost:8000/health
 
 curl http://localhost:8000/services
+
+curl http://localhost:8000/version
 
 
 

@@ -1,10 +1,14 @@
+import os
 from datetime import UTC, datetime
 from fastapi import FastAPI
+
+APP_VERSION = "0.1.2"
+APP_ENVIRONMENT = os.getenv("APP_ENV", "local")
 
 app = FastAPI(
     title = "Azure Operations Platform",
     description = "A small service status API for demonstrating cloud operations",
-    version = "0.1.1"
+    version = APP_VERSION,
 )
 
 @app.get("/")
@@ -41,5 +45,6 @@ def list_services() -> list[dict[str,str]]:
 @app.get("/version")
 def get_version() -> dict[str,str]:
     return {
-        "version": "0.1.1"
+        "version": APP_VERSION,
+        "environment": APP_ENVIRONMENT,
     }

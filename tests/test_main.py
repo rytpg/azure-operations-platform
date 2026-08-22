@@ -36,5 +36,6 @@ def test_version_endpoint() -> None:
 
     assert response.status_code == 200
     assert response.json() == {
-        "version": "0.1.1"
+        "version": "0.1.2",
+        "environment": "local",
     }
